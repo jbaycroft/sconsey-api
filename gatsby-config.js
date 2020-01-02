@@ -39,5 +39,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "sconsey-front",
+      },
+    },
   ],
 }
