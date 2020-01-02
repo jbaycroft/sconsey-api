@@ -1,20 +1,24 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import { Card, CardContent, Typography } from '@material-ui/core'
 
 
 const ArtistsPage = ({ data }) => (
   <Layout>
-    <ul>
-      {data.strapi.artists.map(document => (
-        <li key={document.id}>
-          <h2>
-            <Link to={`/${document.id}`}>{document.Name}</Link>
-          </h2>
-          <p>{document.Description}</p>
-        </li>
-      ))}
-    </ul>
+    {data.strapi.artists.map(document => (
+    <Card key={document.id}>
+        <CardContent>
+            <Typography variant="h5" component="h2">
+                {document.Name}
+            </Typography>
+            <Typography color="textSecondary" gutterBottom>
+                {document.Description}
+            </Typography>
+        <Link to={`/${document.id}`}>View</Link>
+        </CardContent>
+    </Card>
+    ))}
   </Layout>
 )
 
