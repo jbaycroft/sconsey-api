@@ -1,17 +1,18 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import { Button, Divider } from '@material-ui/core'
 
 
-const IndexPage = ({ data }) => (
+const AboutPage = ({ data }) => (
   <Layout>
     <h1>
-      
+        About stuff
     </h1>
   </Layout>
 )
 
-export default IndexPage
+export default AboutPage
 
 export const pageQuery = graphql`  
   query {
