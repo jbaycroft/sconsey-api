@@ -30,20 +30,16 @@ const Layout = ({ children }) => {
   return (
     <div className="root">
     <ThemeProvider theme={theme} >
-      <Header siteTitle={data.site.siteMetadata.title} />
-      
-      <div
-        style={{
-          margin: `0 auto`,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-          
-        }}
-      >
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{
+          height: "20vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
           <div
             style={{
-              paddingBottom: 50
+              paddingBottom: 25,
+              paddingTop: 10
             }}>
             <Grid container  alignContent='center'>
               <Grid item sm={12} justify='center'>
@@ -64,11 +60,18 @@ const Layout = ({ children }) => {
               </Grid>
             </Grid>
           </div>
-          {children}
-         
+        </Container>
+        <Container maxWidth="sm" style={{
+            height: "80vh",
+            overflowY: "auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingBottom: 200
+          }} >
+            {children}
         </Container>
         
-      </div>
     </ThemeProvider>
     </div>
   )

@@ -1,24 +1,32 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
-import { Card, CardContent, Typography } from '@material-ui/core'
+import { Card, CardMedia, CardContent, Typography, Grid } from '@material-ui/core'
+
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+
+
 
 
 const ArtistsPage = ({ data }) => (
   <Layout>
-    {data.strapi.artists.map(document => (
-    <Card key={document.id}>
-        <CardContent>
-            <Typography variant="h5" component="h2">
-                {document.Name}
-            </Typography>
-            <Typography color="textSecondary" gutterBottom>
-                {document.Description}
-            </Typography>
-        <Link to={`/${document.id}`}>View</Link>
-        </CardContent>
-    </Card>
-    ))}
+    <Grid container alignItems="center" spacing={2}>
+      {data.strapi.artists.map(document => (
+        <Grid item sm={6}>
+          <Card key={document.id} >
+            <CardMedia
+              image={EmojiPeopleIcon}
+              title="Paella dish"
+            />
+              <CardContent style={{textAlign: "center"}}>
+                  <Typography variant="h5" component="h2">
+                    <Link to={`/${document.id}`} style={{textDecoration: "none", color:"inherit"}}>{document.Name}</Link>
+                  </Typography>
+              </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
   </Layout>
 )
 
