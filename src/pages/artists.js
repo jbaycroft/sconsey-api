@@ -14,10 +14,10 @@ const ArtistsPage = ({ data }) => (
       {data.strapi.artists.map(document => (
         <Grid item sm={6}>
           <Card key={document.id} >
-            <CardMedia
-              image={EmojiPeopleIcon}
-              title="Paella dish"
-            />
+              {document.Avatar && <CardMedia
+                style={{height: 0, paddingTop: 250}}
+                image={document.Avatar.url}
+              />}
               <CardContent style={{textAlign: "center"}}>
                   <Typography variant="h5" component="h2">
                     <Link to={`/${document.id}`} style={{textDecoration: "none", color:"inherit"}}>{document.Name}</Link>
@@ -36,7 +36,7 @@ export const pageQuery = graphql`
   query {
     strapi {
       artists {
-        id, Name, Description
+        id, Name, Bio, Avatar { url }
       }
     }
   }
