@@ -15,7 +15,7 @@ const ArtistsPage = ({ data }) => (
         <Grid item sm={6}>
           <Card key={document.id} >
               {document.Avatar && <CardMedia
-                style={{height: 0, paddingTop: 250}}
+                style={{height: 0, paddingTop: 100}}
                 image={document.Avatar.url}
               />}
               <CardContent style={{textAlign: "center"}}>

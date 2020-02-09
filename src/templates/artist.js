@@ -8,9 +8,9 @@ var showdown  = require('showdown'),
 
 const ArtistTemplate = ({ data }) => (
   <Layout>
-    <Card style={{width: "100%"}}>
+    <Card style={{overflowY: 'auto', height: "50vh", width: "100%"}}>
       {data.strapi.artist.Avatar && <CardMedia
-          style={{height: 0, paddingTop: 250}}
+          style={{height: 0, paddingTop: 350}}
           image={data.strapi.artist.Avatar.url}
           />}
       <CardContent>

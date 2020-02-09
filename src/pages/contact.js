@@ -6,7 +6,7 @@ import { Button, Divider, Card, CardContent, Typography, CardActions } from '@ma
 
 const ContactPage = () => (
   <Layout>
-    <Card style={{width: "100%"}}>
+    <Card style={{ height: 150, width: "100%"}}>
       <CardContent>
         <Typography variant="h5" component="h2">
           Contact
