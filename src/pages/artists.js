@@ -33,11 +33,13 @@ const ArtistsPage = ({ data }) => (
 export default ArtistsPage
 
 export const pageQuery = graphql`  
-  query {
-    strapi {
-      artists {
-        id, Name, Bio, Avatar { url }
-      }
+{
+  strapi {
+    artists(where: {active: true}) {
+      id
+      Name
+      Bio
     }
   }
+}
 `
