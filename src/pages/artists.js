@@ -15,7 +15,7 @@ const ArtistsPage = ({ data }) => (
         <Grid item sm={6}>
           <Card key={document.id} >
               {document.Avatar && <CardMedia
-                style={{height: 0, paddingTop: 100}}
+                style={{height: 0, paddingTop: 250}}
                 image={document.Avatar.url}
               />}
               <CardContent style={{textAlign: "center"}}>
@@ -39,6 +39,7 @@ export const pageQuery = graphql`
       id
       Name
       Bio
+      Avatar { url }
     }
   }
 }
