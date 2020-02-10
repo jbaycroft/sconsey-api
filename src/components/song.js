@@ -12,7 +12,8 @@ import {
   Avatar,
   ExpansionPanel, 
   ExpansionPanelSummary, 
-  ExpansionPanelDetails } from '@material-ui/core'
+  ExpansionPanelDetails, 
+  TextField} from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 import { Media, Player, controls } from 'react-media-player'
@@ -27,6 +28,7 @@ const {
 
 
 const Song = ({ song }) => (
+
   <ExpansionPanel>
     <ExpansionPanelSummary
     expandIcon={<ExpandMoreIcon />}
@@ -38,7 +40,6 @@ const Song = ({ song }) => (
     <ExpansionPanelDetails>
       <Typography style={{width: '100%'}}>
       <Divider style={{marginBottom: 20}}/>
-        
         {song.recordings.map(recording => (
           <Typography style={{paddingTop: 25}}>
              {recording && <Media>
