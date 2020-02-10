@@ -33,10 +33,11 @@ const Article = ({ article }) => (
           {article.Content}
       </Typography>
       <Divider style={{marginTop: 20, marginBottom: 20}} />
-      {article.songs.length > 0 && <Media>
+      {article.recording && <Media>
         <div className="media">
+          {article.recording.song.Title + " - " + article.recording.Name}
           <div className="media-player" >
-            <Player vendor='audio' src={article.songs[0].releases[0].File.url} />
+            <Player vendor='audio' src={article.recording.File.url} />
           </div>
           <div className="media-controls" style={{display: "flex"}}>
             <PlayPause className="media-control media-control--play-pause" />
@@ -51,3 +52,4 @@ const Article = ({ article }) => (
 )
 
 export default Article
+

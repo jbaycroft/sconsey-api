@@ -43,6 +43,7 @@ const Layout = ({ children }) => {
                 <div style={{textAlign: 'center'}}>
                   <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
                     <Button component={Link} to={"/artists"} >Artists</Button>
+                    <Button component={Link} to={"/songs"} >Songs</Button>
                     <Button component={Link} to={"/contact"} >Contact Us</Button>
                   </ButtonGroup>
                 </div>

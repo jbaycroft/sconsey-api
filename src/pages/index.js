@@ -31,15 +31,17 @@ export const pageQuery = graphql`
       artists {
         id
         Name
-        Avatar { url }
+        Avatar {
+          url
+        }
       }
-      songs {
-        Title
-        releases {
-          Release
-          File {
-            url
-          }
+      recording {
+        Name
+        song {
+          Title
+        }
+        File {
+          url
         }
       }
     }
