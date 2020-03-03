@@ -13,17 +13,20 @@ const ArtistsPage = ({ data }) => (
     <Grid container alignItems="center" spacing={2}>
       {data.strapi.artists.map(document => (
         <Grid item sm={6}>
-          <Card key={document.id} >
-              {document.Avatar && <CardMedia
-                style={{height: 0, paddingTop: 250}}
-                image={document.Avatar.url}
-              />}
-              <CardContent style={{textAlign: "center"}}>
-                  <Typography variant="h5" component="h2">
-                    <Link to={`/${document.id}`} style={{textDecoration: "none", color:"inherit"}}>{document.Name}</Link>
-                  </Typography>
-              </CardContent>
-          </Card>
+          <Link to={`/${document.id}`} style={{textDecoration: "none", color:"inherit"}}>
+            <Card key={document.id} >
+                {document.Avatar && <CardMedia
+                  style={{height: 0, paddingTop: 250}}
+                  image={document.Avatar.url}
+                />}
+                <CardContent style={{textAlign: "center"}}>
+                    <Typography variant="h5" component="h2">
+                      {/* {document.Name}</Link> */}
+                      {document.Name}
+                    </Typography>
+                </CardContent>
+            </Card>
+          </Link>
         </Grid>
       ))}
     </Grid>

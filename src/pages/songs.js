@@ -14,6 +14,8 @@ import {
   ExpansionPanelDetails, 
   TextField} from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import SearchIcon from '@material-ui/icons/Search';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Song from '../components/song'
 import dataSearch from '../utils/dataSearch'
 
@@ -32,9 +34,20 @@ const SongsPage = ({ data }) => {
 
   return (  <Layout>
       <Paper style={{ height: 0, width: "100%"}}>
-        <TextField value={search} onChange={
-          (event) => setSearch(event.target.value)
-        }/>
+        <TextField 
+          value={search} 
+          label='Search'
+          onChange={
+            (event) => setSearch(event.target.value)
+          }
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
         {filteredSongs.map(song => (
           <Song song={song} />
         ))}

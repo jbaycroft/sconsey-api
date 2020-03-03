@@ -48,11 +48,7 @@ const Song = ({ song }) => (
                       <Player vendor='audio' src={recording.File.url} />
                     </div>
                     <Grid container>
-                      <Grid item xs={3} noWrap>
-                        {recording.Name}  
-                        
-                      </Grid>
-                      <Grid item xs={5}>
+                      <Grid item xs={2}>
                         <AvatarGroup>
                           {song.artists.map(artist => (
                               <Tooltip title={artist.Name} >
@@ -61,6 +57,10 @@ const Song = ({ song }) => (
                             )
                           )}
                         </AvatarGroup>
+                      </Grid>
+                      <Grid item xs={6} noWrap>
+                        {recording.Name}  
+                        
                       </Grid>
                       <Grid item xs={4}>
                         <PlayPause className="media-control media-control--play-pause" />
