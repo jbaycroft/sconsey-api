@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent, Typography, Avatar, CardHeader, Divider, Tooltip } from '@material-ui/core'
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
+import ReactMarkdown from "react-markdown";  
 import { Media, Player, controls } from 'react-media-player'
 const { 
   PlayPause,
@@ -30,7 +31,7 @@ const Article = ({ article }) => (
   />
   <CardContent>
       <Typography variant="body1" component="h2">
-          {article.Content}
+          <ReactMarkdown source={article.Content} />
       </Typography>
       <Divider style={{marginTop: 20, marginBottom: 20}} />
       {article.recording && <Media>
